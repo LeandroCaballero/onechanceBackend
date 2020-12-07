@@ -14,7 +14,7 @@ downloadController.download = async (req, res) => {
     //console.log(typeof(nombre))
     var paramGet = {
         Bucket: 'onechancebucket',
-        Key: `${nombre}`
+        Key: `FotoPerfil/${nombre}`
     }
 
     s3.getObject(paramGet, (err, data) => {
