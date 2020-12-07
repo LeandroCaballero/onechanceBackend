@@ -1,16 +1,19 @@
-const path = require('path') //une las rutas de windows o linux
+const express = require('express');
+const cors = require('cors')
+const app = express();
 const fileupload = require('express-fileupload')
-var express = require('express');
-var cors = require('cors')
-var app = express();
 require('dotenv').config()
 
 app.use(fileupload())
 app.use(cors())
+app.use(express.json()) //el servidor entiende archivos JSON
+
 const port = process.env.PORT
 const upload = require('./routes/upload')
+const download = require('./routes/download')
 
-app.use('/aws', upload)
+app.use('/upload', upload)
+app.use('/download', download)
 
 app.listen(port, () => {
   console.log(`Run on port: ${port}`)
