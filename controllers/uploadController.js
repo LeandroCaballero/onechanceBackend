@@ -16,7 +16,7 @@ uploadController.upload = async (req, res) => {
 
     var paramPut = {
         Bucket: 'onechancebucket',
-        Key: `${id}.${formato}`, //Aca se coloca el nombre que va a aparecer en s3
+        Key: `FotoPerfil/${id}.${formato}`, //Aca se coloca el nombre que va a aparecer en s3
         Body: imagen  //Lo que queremos enviar
     }
     s3.putObject(paramPut, (err, data) => {
