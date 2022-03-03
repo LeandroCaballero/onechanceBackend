@@ -1,9 +1,8 @@
-const { Router } = require('express')
+const { Router } = require("express")
 const router = Router()
 
-const { download } = require('../controllers/downloadController')
+const { download } = require("../controllers/downloadController")
 
-router.route('/:nombre')
-    .get(download)
+router.route("/:nombre").get(download)
 
-module.exports = router; 
+module.exports = router
